@@ -7,60 +7,73 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## เกี่ยวกับโปรเจค
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+เป็นโปรเจคตัวอย่างที่ทำจากคลิป Youtube ของช่อง [KongRuksiam](https://www.youtube.com/@KongRuksiamOfficial).
+- แรกเริ่มการสร้างโปรเจค Laravel และ การติดตั้ง Laravel Jetstream.
+- สร้างข้อมูลหลังบ้าน หน้า Dashboard โดยมีหมวด Uesr , Departments และ Service
+- ประกอบด้วย ดู/ลบ/แก้ไข ฐานข้อมูล อัพโหลดรูปภาพและเก็บ ระบบถังขยะกู้คืนข้อมูล ปุ่มยืนยันลบข้อมูล เป็นต้น
+- example = ชื่อไฟล์
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## เริ่มต้นการใช้งาน
 
-## Learning Laravel
+- ติดตั้ง Xampp , Composser , Node.js(อาจจะต้องติ้กติดตั้งส่วนเสริมหรือส่วนขยายที่จำเป็นด้วย) 
+- ติดตั้ง Laravel ที่ htdocs ในโฟลเดอร์ xampp CMD
+- ติดตั้ง Laravel Jetstream ในโฟลเดอร์โปรเจค CMD (อาจจะไม่จำเป็นต้องติดตั้งหากไม่ใช้หลังบ้าน)
+- หากมี Error ทำให้ไม่สามารถติดตั้ง Laravel เกิดปัญหาเกี่ยวกับการแตกไฟล์ zip ให้ติดตั้ง 7zip ตั้งแต่เริ่มต้น (ลบติดตั้งอื่นทั้งหมดแล้วเริ่มติดตั้ง 7zip ก่อน)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## รวมคำสั่งติดตั้ง
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+ทุกคำสั่งจะใช้ CMD ภายในตัวโปรเจค ยกเว้นการติดตั้ง Laravel จะใช้ CMD ที่ xampp/htdocs
 
-## Laravel Sponsors
+### Laravel Jetstream
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- คำสั่งติดตั้ง Laravel Jetstream :composer require laravel/jetstream
+- คำสั่งติดตั้ง Jetstream livewire :php artisan jetstream:install livewire
 
-### Premium Partners
+### Laravel
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- คำสั่งติดตั้ง Laravel :composer global require laravel/installer
+- คำสั่งสร้างโปรเจค Laravel :laravel new example-app
+- คำสั่งอัพเดท ข้อมูลตารางโปรเจคไปยัง ฐานข้อมูล :php artisan migrate
+- คำสั่งสร้างคอลโทรเลอร์ :php artisan make:controller exampleController
+- คำสั่งสร้างโมเดลพร้อมตารางข้อมูล :php artisan make:model example -m
+- คำสั่งสร้างตัวกรอกข้อมูลระบบ :php artisan make:middleware example
+- คำสั่งเริ่มต้นเซิร์ฟเวอร์ :php artisan serve
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## สิ่งที่มีในโปรเจค
+- หน้าต้อนรับเข้าสู่ Website welcome.blade.php ได้รับเมื่อสร้าง โปรเจค Laravel
 
-## Code of Conduct
+### ระบบหลังบ้าน Laravel Jetstream
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- Reister: ชื่อ อิเมล รหัสผ่าน ยืนยันรหัสผ่าน
+- Login: อิเมล รหัสผ่าน ปุ่มจดจำ ลืมรหัสผ่าน(ส่งรีเซ็ตรหัสผ่านเช้าเมล)
+- Dashboard: แสดงหน้าแรกเข้า
+- Navigation-menu: แถบเมนูด้านบนของ Website
+- Profile: แก้ไข/ชื่อ อิเมล || เปลี่ยนรหัสผ่าน || ยืนยัน 2 ขั้นตอนโดย Google Authentication || แสดงการเข้าสู่ระบบในคอมแต่ละสถานที่ ปุ่มลบการเข้าสู่ระบบบนคอมเครื่องอื่น(ยกเว้นเครื่องที่เข้าใช้งาน)
 
-## Security Vulnerabilities
+### สิ่งที่มีการแก้ไข/เพิ่มเติม
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- .env ไฟล์แก้ไข ชื่อโปรเจค ชื่อฐานข้อมูล ตั้งค่าอื่นๆ
+- routes/web.php ใช้นำทางไฟล์ต่างๆ
+- public ลงไฟล์ภายนอกเพื่อใช้งาน bootstrap,jquery และ ใช้เก็บไฟล์ที่บันทึกเข้าฐานข้อมูล(รูปภาพหรืออื่นๆ)
+- app/Models เก็บข้อมูลจากแบบฟอร์มและในฐานข้อมูลเพื่อนำมาใช้งาน
+- app/Http/Controllers ตัวควบคุม หรือ ใช้ฟังก์ชันในการทำงานเบื้องหลังเช่น การคำนวณ การจัดเก็บข้อมูลลงฐานข้อมูล เก็บตัวแปรเพื่อใช้ในการแสดงบนหน้า Website
+- database/migrations ออกแบบตารางเพื่อเก็บข้อมูลต่างๆในฐานข้อมูล
+- view สร้างทั้งโฟลเดอร์และไฟล์ในการอออกแบบหน้าเว็บ แสดงหน้าเว็บต่างๆที่ผู้ใช้เห็น (ทุกไฟล์ต้องมี example.blade.php)
+- view/layouts/app.blade.php ใช้เพื่อเส้นทางการใช้งานไฟล์จาก public เช่น bootstrap,jquery,sweetalert2
 
-## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## เว็บไซต์ที่เกี่ยวข้อง
+
+- **[Laravel-v10.x](https://laravel.com/docs/10.x)**
+- **[Laravel Jetstream-v3.x](https://jetstream.laravel.com/3.x/introduction.html)**
+- **[พัฒนาเว็บด้วย Laravel Framework 8.x](https://youtu.be/nswjmJBTvZo)**
+
+
+## ใบอนุญาต
+
+Laravel framework เป็นซอฟต์แวร์โอเพ่นซอร์สที่ได้รับอนุญาตภายใต้ [MIT license](https://opensource.org/licenses/MIT).
